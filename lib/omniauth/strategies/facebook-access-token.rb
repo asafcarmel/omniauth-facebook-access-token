@@ -68,7 +68,8 @@ module OmniAuth
       end
 
       def client
-        ::OAuth2::Client.new(options.client_id.call(request.host), options.client_secert.call(request.host), deep_symbolize(options.client_options))
+        binding.pry
+        ::OAuth2::Client.new(options.client_id.call(request.host), options.client_secret.call(request.host), deep_symbolize(options.client_options))
       end
 
       def request_phase

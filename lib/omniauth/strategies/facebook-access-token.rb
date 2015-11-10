@@ -68,7 +68,6 @@ module OmniAuth
       end
 
       def client
-        binding.pry
         ::OAuth2::Client.new(options.client_id.call(request.host), options.client_secret.call(request.host), deep_symbolize(options.client_options))
       end
 
